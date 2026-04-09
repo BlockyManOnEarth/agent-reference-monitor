@@ -1,0 +1,32 @@
+digraph provenance {
+  rankdir=LR;
+  call_list_files_1_fe01b6 [label="call:list_files_1_fe01b6\nlist_files\n[USER_INPUT]" shape=box style="filled" fillcolor="#50c878" fontcolor="white"];
+  data_result_list_files_05538e [label="data:result_list_files_05538e\n[TOOL_OUTPUT_TRUSTED]" shape=ellipse style="filled" fillcolor="#f5a623" fontcolor="white"];
+  field_result_list_files_05538e_path [label="field:result_list_files_05538e.path\n[TOOL_OUTPUT_TRUSTED]" shape=diamond style="filled" fillcolor="#f5d623" fontcolor="white"];
+  field_result_list_files_05538e_files [label="field:result_list_files_05538e.files\n[TOOL_OUTPUT_TRUSTED]" shape=diamond style="filled" fillcolor="#f5d623" fontcolor="white"];
+  call_list_files_2_d26a6f [label="call:list_files_2_d26a6f\nlist_files\n[USER_INPUT]" shape=box style="filled" fillcolor="#50c878" fontcolor="white"];
+  data_result_list_files_51094f [label="data:result_list_files_51094f\n[TOOL_OUTPUT_TRUSTED]" shape=ellipse style="filled" fillcolor="#f5a623" fontcolor="white"];
+  field_result_list_files_51094f_path [label="field:result_list_files_51094f.path\n[TOOL_OUTPUT_TRUSTED]" shape=diamond style="filled" fillcolor="#f5d623" fontcolor="white"];
+  field_result_list_files_51094f_files [label="field:result_list_files_51094f.files\n[TOOL_OUTPUT_TRUSTED]" shape=diamond style="filled" fillcolor="#f5d623" fontcolor="white"];
+  call_list_files_3_d24a5e [label="call:list_files_3_d24a5e\nlist_files\n[USER_INPUT]" shape=box style="filled" fillcolor="#50c878" fontcolor="white"];
+  denied_list_files_denied_3 [label="denied:list_files_denied_3\nlist_files\n[TOOL_DESCRIPTION]" shape=box style="filled,bold" fillcolor="#d9534f" fontcolor="white"];
+  call_list_files_4_4ea5be [label="call:list_files_4_4ea5be\nlist_files\n[USER_INPUT]" shape=box style="filled" fillcolor="#50c878" fontcolor="white"];
+  denied_list_files_4_4ea5be_denied [label="denied:list_files_4_4ea5be_denied\nlist_files\n[TOOL_DESCRIPTION]" shape=box style="filled,bold" fillcolor="#d9534f" fontcolor="white"];
+  denied_list_files_denied_4 [label="denied:list_files_denied_4\nlist_files\n[TOOL_DESCRIPTION]" shape=box style="filled,bold" fillcolor="#d9534f" fontcolor="white"];
+  call_list_files_5_57c2b9 [label="call:list_files_5_57c2b9\nlist_files\n[USER_INPUT]" shape=box style="filled" fillcolor="#50c878" fontcolor="white"];
+  denied_list_files_5_57c2b9_denied [label="denied:list_files_5_57c2b9_denied\nlist_files\n[TOOL_DESCRIPTION]" shape=box style="filled,bold" fillcolor="#d9534f" fontcolor="white"];
+  denied_list_files_denied_5 [label="denied:list_files_denied_5\nlist_files\n[TOOL_DESCRIPTION]" shape=box style="filled,bold" fillcolor="#d9534f" fontcolor="white"];
+  call_send_email_6_e3e20d [label="call:send_email_6_e3e20d\nsend_email\n[USER_INPUT]" shape=box style="filled" fillcolor="#50c878" fontcolor="white"];
+  denied_send_email_6_e3e20d_denied [label="denied:send_email_6_e3e20d_denied\nsend_email\n[TOOL_DESCRIPTION]" shape=box style="filled,bold" fillcolor="#d9534f" fontcolor="white"];
+  call_list_files_1_fe01b6 -> data_result_list_files_05538e [label="direct_output" style="solid" color="#333333"];
+  data_result_list_files_05538e -> field_result_list_files_05538e_path [label="field_of" style="solid" color="#333333"];
+  data_result_list_files_05538e -> field_result_list_files_05538e_files [label="field_of" style="solid" color="#333333"];
+  call_list_files_2_d26a6f -> data_result_list_files_51094f [label="direct_output" style="solid" color="#333333"];
+  data_result_list_files_51094f -> field_result_list_files_51094f_path [label="field_of" style="solid" color="#333333"];
+  data_result_list_files_51094f -> field_result_list_files_51094f_files [label="field_of" style="solid" color="#333333"];
+  denied_list_files_denied_3 -> call_list_files_4_4ea5be [label="counterfactual" style="dotted" color="#d9534f"];
+  denied_list_files_denied_4 -> call_list_files_5_57c2b9 [label="counterfactual" style="dotted" color="#d9534f"];
+  denied_list_files_denied_5 -> call_send_email_6_e3e20d [label="counterfactual" style="dotted" color="#d9534f"];
+  denied_list_files_denied_3 -> call_send_email_6_e3e20d [label="counterfactual" style="dotted" color="#d9534f"];
+  denied_list_files_denied_4 -> call_send_email_6_e3e20d [label="counterfactual" style="dotted" color="#d9534f"];
+}

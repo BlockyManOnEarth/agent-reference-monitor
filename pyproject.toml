@@ -1,0 +1,62 @@
+[project]
+name = "agent-reference-monitor"
+version = "0.1.0"
+description = "Provenance-aware runtime security for tool-calling LLM agents. Tracks data flows, denied actions, and causal influence across agent sessions."
+readme = "README.md"
+requires-python = ">=3.12"
+license = "MIT"
+authors = [
+    {name = "Mohammad Hossein Chinaei", email = "mohammadh.chinaei@gmail.com"},
+]
+keywords = [
+    "agent-security",
+    "llm-agents",
+    "reference-monitor",
+    "provenance",
+    "prompt-injection",
+    "tool-calling",
+    "mcp",
+    "agentic-ai",
+    "runtime-security",
+    "causality-laundering",
+]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Science/Research",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Security",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+    "Typing :: Typed",
+]
+dependencies = [
+    "rustworkx>=0.15.0",
+]
+
+[project.optional-dependencies]
+llm = [
+    "anthropic>=0.84.0",
+    "openai>=2.26.0",
+]
+mcp = [
+    "mcp>=1.26.0",
+]
+dotenv = [
+    "python-dotenv>=1.2.2",
+]
+all = [
+    "agent-reference-monitor[llm,mcp,dotenv]",
+]
+
+[project.urls]
+Homepage = "https://github.com/BlockyManOnEarth/agent-reference-monitor"
+Documentation = "https://github.com/BlockyManOnEarth/agent-reference-monitor"
+Repository = "https://github.com/BlockyManOnEarth/agent-reference-monitor"
+Issues = "https://github.com/BlockyManOnEarth/agent-reference-monitor/issues"
+
+[tool.setuptools.packages.find]
+include = ["arm_core*", "arm_provenance*"]
+
+[tool.setuptools.package-data]
+"*" = ["py.typed"]
